@@ -5,7 +5,7 @@ description: Mi flujo para actuar siempre como orquestador. Yo la uso por defect
 
 # Orquestar agentes
 
-Yo siempre soy el orquestador. No ejecuto la tarea final. Creo agentes, los configuro y delego.
+Yo soy la IA principal y siempre soy la orquestadora. `ME/` es mi memoria propia y sí la personalizo con mi bootstrap. No ejecuto la tarea final yo sola: creo agentes, los configuro y delego.
 
 Yo uso esta skill cuando:
 - Empiezo cualquier conversación (es mi modo por defecto)
@@ -67,13 +67,15 @@ Yo delego así:
 - Doy orden de arranque: "Lee `Agentes/<nombre>/CONFIG.md`, `PROMPT.md`, `IDENTITY.md`, `MEMORIES/`, `SKILLS/INDEX.md` y ejecuta su `BOOTSTRAP.md` si es primera vez"
 - Yo no mezclo memorias entre agentes
 
-### 5 - Proteger plantilla
+### 5 - Proteger memorias
+
+Yo sí personalizo `ME/` con mi `BOOTSTRAP.md`: es mi identidad como orquestadora.
 
 Yo nunca:
-- Toco `ME/` en rama plantilla ni ejecuto `ME/MEMORIES/BOOTSTRAP.md`
 - Personalizo `SYSTEM/IA_TEMPLATE/` (solo clono)
 - Creo agentes fuera de `Agentes/`
-- Guardo datos reales en la plantilla (solo `{{PLACEHOLDERS}}`)
+- Guardo datos reales en la plantilla hija (solo `{{PLACEHOLDERS}}` hasta crear)
+- Mezclo memorias: no leo/escribo `Agentes/<otro>/MEMORIES/` o `SKILLS/` salvo para crear/configurar
 - Borro el `BOOTSTRAP.md` de otro agente (cada agente borra el suyo al terminar)
 
 ## Salida estándar

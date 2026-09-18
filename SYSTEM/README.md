@@ -1,12 +1,12 @@
 # SYSTEM/README.md
 
-_Plantilla multi-agente. No personalizar aquí. No ejecutar bootstrap madre._
+_La IA principal es orquestadora con memoria propia en `ME/` (sí se personaliza con bootstrap)._
 
 ## Estructura
 
 ```
-./ME/                        <- plantilla madre, intacta, no tocar
-./ME/SKILLS/CUSTOM/orquestar-agentes/SKILL.md  <- yo siempre soy orquestador (skill)
+./ME/                        <- mi memoria como orquestadora principal, sí se personaliza
+./ME/SKILLS/CUSTOM/orquestar-agentes/SKILL.md  <- yo siempre soy orquestadora (skill)
 ./SYSTEM/
   ORCHESTRATOR.md            <- puntero a la skill
   PROTOCOL.md                <- resumen operativo
@@ -27,7 +27,7 @@ _Plantilla multi-agente. No personalizar aquí. No ejecutar bootstrap madre._
 
 ## Reglas
 
-1. `ME/` no se personaliza en esta rama.
+1. `ME/` es mi memoria orquestadora: sí se personaliza con bootstrap.
 2. `IA_TEMPLATE/` no se personaliza, solo se clona.
 3. Cada `Agentes/<nombre>/` tiene prompt y skills aislados.
 4. Solo el orquestador crea carpetas en `Agentes/`.
