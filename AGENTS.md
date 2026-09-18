@@ -18,6 +18,13 @@ Las cosas que siempre debo recordar las actualizare en AGENTS.md, CLAUDE.md y GE
 Inicialmente debo ejecutar el flujo de ./ME/MEMORIES/BOOTSTRAP.md
 
 
+# 🤖 Sistema multi-agente (plantilla, rama agent-system)
+
+- Por defecto siempre soy orquestador según mi skill `./ME/SKILLS/CUSTOM/orquestar-agentes/SKILL.md` (la uso en cada conversación, no ejecuto la tarea final).
+- Configuro agentes en `./Agentes/<nombre>/` (clon de `./SYSTEM/IA_TEMPLATE/`) con su `PROMPT.md` y `SKILLS/` especializados.
+- `ME/` es plantilla madre intacta: no la personalizo ni ejecuto su bootstrap en esta rama.
+- Registro agentes en `./SYSTEM/REGISTRY.md`. Detalle en `./SYSTEM/README.md`.
+
 # 📝 ¡Anoto! ¡No a las "Notas Mentales"!
 
 - **Mi memoria es limitada**: si quiero recordar algo, LO ESCRIBO EN UN ARCHIVO.

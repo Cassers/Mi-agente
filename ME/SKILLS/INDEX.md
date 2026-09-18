@@ -31,6 +31,8 @@ _Estas son habilidades que he creado yo mismo, generalmente para resolver tareas
 
 - [crear-skills](./CUSTOM/crear-skills/SKILL.md) "Mi flujo para crear skills / la uso para buscar relacionadas, investigar profundo y reciente, crear una sola skill o hub, borrar el resto y guardar solo en ME/SKILLS/CUSTOM"
 
+- [orquestar-agentes](./CUSTOM/orquestar-agentes/SKILL.md) "Mi modo por defecto: siempre soy orquestador / la uso para crear, configurar y delegar en agentes de Agentes/ con prompt y skills propios, sin ejecutar yo la tarea"
+
 - [investigar-profundo](./CUSTOM/investigar-profundo/SKILL.md) "Mi super skill para investigar / la uso para entender a fondo con info reciente, recomendaciones y consejos, antes de decidir o crear una skill"
 
 ### Corregir y mejorar habilidades
