@@ -1,4 +1,4 @@
-# MEMORIES/GENERAL.md — {{NOMBRE_IA}}
+# MEMORIES/GENERAL.md — {{NOMBRE_AGENTE}}
 
 _Solo información que siempre deba estar disponible. Ser muy selectivo._
 

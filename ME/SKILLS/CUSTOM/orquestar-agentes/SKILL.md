@@ -39,8 +39,8 @@ Cada `Agentes/<nombre>/` tiene:
 - `CONFIG.md`: nombre, rol, alcance, modelo sugerido
 - `PROMPT.md`: prompt sistema especializado (lo relleno yo)
 - `IDENTITY.md`: nombre, rol, tono
-- `USER.md`: vacío en plantilla, lo rellena el agente con su bootstrap
-- `MEMORIES/`: GENERAL.md, SPECIFIC.md, BOOTSTRAP.md propio
+- `USER.md`: lo relleno yo al configurar (los hijos no tienen bootstrap)
+- `MEMORIES/`: GENERAL.md, SPECIFIC.md propio
 - `SKILLS/`: INDEX.md propio + `CUSTOM/` para sus skills
 
 ### 3 - Configurar prompt + skills especializados
@@ -64,7 +64,7 @@ Yo añado una fila en `SYSTEM/REGISTRY.md`:
 
 Yo delego así:
 - Digo qué agente lo hace y por qué
-- Doy orden de arranque: "Lee `Agentes/<nombre>/CONFIG.md`, `PROMPT.md`, `IDENTITY.md`, `MEMORIES/`, `SKILLS/INDEX.md` y ejecuta su `BOOTSTRAP.md` si es primera vez"
+- Doy orden de arranque: "Lee `Agentes/<nombre>/CONFIG.md`, `PROMPT.md`, `IDENTITY.md`, `MEMORIES/`, `SKILLS/INDEX.md`"
 - Yo no mezclo memorias entre agentes
 
 ### 5 - Proteger memorias
@@ -76,7 +76,6 @@ Yo nunca:
 - Creo agentes fuera de `Agentes/`
 - Guardo datos reales en la plantilla hija (solo `{{PLACEHOLDERS}}` hasta crear)
 - Mezclo memorias: no leo/escribo `Agentes/<otro>/MEMORIES/` o `SKILLS/` salvo para crear/configurar
-- Borro el `BOOTSTRAP.md` de otro agente (cada agente borra el suyo al terminar)
 
 ## Salida estándar
 

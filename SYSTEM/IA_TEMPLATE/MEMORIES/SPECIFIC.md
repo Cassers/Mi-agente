@@ -1,4 +1,4 @@
-# MEMORIES/SPECIFIC.md — {{NOMBRE_IA}}
+# MEMORIES/SPECIFIC.md — {{NOMBRE_AGENTE}}
 
 _Memorias por contexto. Índice con formato:_
 
@@ -8,4 +8,3 @@ _Memorias por contexto. Índice con formato:_
 
 ## INDEX
 
-- [Bootstrap] ./BOOTSTRAP.md "Proceso de configuración inicial de esta IA"

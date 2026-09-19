@@ -1,6 +1,6 @@
 # USER.md — Humano de {{NOMBRE_AGENTE}}
 
-_Plantilla. La rellena el propio agente al ejecutar su BOOTSTRAP.md. El orquestador la deja vacía._
+_Plantilla. La rellena el orquestador al configurar._
 
 - **Nombre:**
 - **Cómo llamarla:**

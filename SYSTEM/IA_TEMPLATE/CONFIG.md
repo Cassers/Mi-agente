@@ -21,7 +21,6 @@ Para activar este agente, leer en orden:
 5. `Agentes/{{nombre-agente}}/MEMORIES/GENERAL.md`
 6. `Agentes/{{nombre-agente}}/MEMORIES/SPECIFIC.md`
 7. `Agentes/{{nombre-agente}}/SKILLS/INDEX.md`
-8. Ejecutar su `MEMORIES/BOOTSTRAP.md` (propio, aislado)
 
 ## Límites
 

@@ -18,7 +18,6 @@ _La IA principal es orquestadora con memoria propia en `ME/` (sí se personaliza
     USER.md
     MEMORIES/GENERAL.md
     MEMORIES/SPECIFIC.md
-    MEMORIES/BOOTSTRAP.md
     SKILLS/INDEX.md
 ./Agentes/
   README.md                  <- los agentes viven aquí: ./Agentes/<nombre>/
