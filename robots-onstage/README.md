@@ -2,6 +2,8 @@
 
 Código de los 3 robots autónomos para la competencia OnStage. **El código de los robots lo escribe Luka**; los agentes de IA preparan el entorno, las pruebas y enseñan.
 
+¿Primera vez? Abre `intro.html` en el navegador: explica en una página quién hace qué y cómo es un día de trabajo.
+
 ## Estructura
 
 ```

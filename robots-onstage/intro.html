@@ -1,0 +1,309 @@
+<title>Tu equipo OnStage</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: una sola columna de "escenas" grandes; cada rol tiene su color y lo conserva en toda la página */
+:root {
+  --bg: #F4F5F8;
+  --surface: #FFFFFF;
+  --ink: #16181D;
+  --muted: #5A6174;
+  --line: #DCE0E8;
+  --tu: #C2410C;        /* Luka */
+  --tu-soft: #FFEDD5;
+  --prof: #0F766E;      /* profesor */
+  --prof-soft: #D9F2EE;
+  --tec: #3B4FC4;       /* técnico (entorno) */
+  --tec-soft: #E3E7FB;
+  --dir: #6B5A2E;       /* director */
+  --dir-soft: #F3EDDC;
+  --font-display: "Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --font-body: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #111319; --surface: #1A1D25; --ink: #E8EAF0; --muted: #9CA3B5; --line: #2B303C;
+    --tu: #FB923C; --tu-soft: #3A2415; --prof: #2DD4BF; --prof-soft: #11302C;
+    --tec: #8B9BFF; --tec-soft: #1E2447; --dir: #D9C08A; --dir-soft: #2E2919; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #111319; --surface: #1A1D25; --ink: #E8EAF0; --muted: #9CA3B5; --line: #2B303C;
+  --tu: #FB923C; --tu-soft: #3A2415; --prof: #2DD4BF; --prof-soft: #11302C;
+  --tec: #8B9BFF; --tec-soft: #1E2447; --dir: #D9C08A; --dir-soft: #2E2919; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font: 400 17px/1.6 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 40px 80px;
+}
+.wrap { max-width: 880px; margin: 0 auto; display: grid; gap: 72px; }
+h1, h2, h3 { font-family: var(--font-display); margin: 0; line-height: 1.1; text-wrap: balance; }
+h1 { font-size: clamp(2.4rem, 7vw, 4rem); font-weight: 800; letter-spacing: -0.025em; }
+h2 { font-size: clamp(1.6rem, 4vw, 2.1rem); font-weight: 800; letter-spacing: -0.015em; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+p { margin: 0; max-width: 60ch; }
+.label { font: 500 0.74rem/1 var(--font-mono); letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); }
+section { display: grid; gap: 24px; }
+.lead { font-size: 1.15rem; color: var(--muted); }
+.tu { color: var(--tu); } .prof { color: var(--prof); } .tec { color: var(--tec); } .dir { color: var(--dir); }
+code { font-family: var(--font-mono); font-size: 0.88em; background: var(--surface); border: 1px solid var(--line); padding: 1px 6px; border-radius: 4px; }
+
+/* hero */
+header { display: grid; gap: 20px; }
+.stage { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 12px; overflow-x: auto; }
+.stage svg { display: block; width: 100%; min-width: 560px; height: auto; }
+.stage text { font-family: var(--font-body); }
+
+/* roles */
+.roles { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.role { border-radius: 10px; padding: 20px; display: grid; gap: 12px; align-content: start; border: 1px solid var(--line); background: var(--surface); }
+.role .head { display: flex; align-items: center; gap: 12px; }
+.role .icon { width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; flex: none; }
+.role .icon svg { width: 24px; height: 24px; }
+.role ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 0.95rem; }
+.role li { display: flex; gap: 8px; }
+.role li::before { content: "✓"; font-weight: 600; }
+.role li.no { color: var(--muted); }
+.role li.no::before { content: "✕"; }
+.r-tu .icon { background: var(--tu-soft); color: var(--tu); } .r-tu li::before { color: var(--tu); }
+.r-prof .icon { background: var(--prof-soft); color: var(--prof); } .r-prof li::before { color: var(--prof); }
+.r-tec .icon { background: var(--tec-soft); color: var(--tec); } .r-tec li::before { color: var(--tec); }
+.role li.no::before { color: var(--muted); }
+.r-tu { border-top: 4px solid var(--tu); } .r-prof { border-top: 4px solid var(--prof); } .r-tec { border-top: 4px solid var(--tec); }
+.dirnote { display: flex; gap: 14px; align-items: center; background: var(--dir-soft); border-radius: 10px; padding: 14px 18px; }
+.dirnote .icon { color: var(--dir); flex: none; }
+.dirnote .icon svg { width: 28px; height: 28px; display: block; }
+@media (max-width: 720px) { .roles { grid-template-columns: minmax(0, 1fr); } }
+
+/* loop */
+.loop { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; position: relative; }
+.step { display: grid; gap: 8px; justify-items: start; padding: 0 14px 0 0; position: relative; }
+.step .dot { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font: 800 1.3rem/1 var(--font-display); color: var(--surface); }
+.step .dot svg { width: 26px; height: 26px; }
+.step p { font-size: 0.93rem; color: var(--muted); }
+.step .who { font: 500 0.72rem/1 var(--font-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.step:not(:last-child)::after { content: ""; position: absolute; top: 26px; left: 60px; right: 6px; border-top: 2px dashed var(--line); }
+.s1 .dot, .s3 .dot, .s4 .dot { background: var(--tu); } .s2 .dot { background: var(--tec); }
+.back { display: flex; gap: 14px; align-items: center; margin-top: 8px; padding: 14px 18px; border: 2px dashed var(--prof); border-radius: 10px; }
+.back .dot { width: 40px; height: 40px; border-radius: 50%; background: var(--prof); color: var(--surface); display: grid; place-items: center; flex: none; }
+.back .dot svg { width: 22px; height: 22px; }
+@media (max-width: 720px) {
+  .loop { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .step { grid-template-columns: 52px minmax(0, 1fr); column-gap: 14px; justify-items: stretch; }
+  .step .dot { grid-row: span 3; }
+  .step:not(:last-child)::after { top: 56px; bottom: -16px; left: 25px; right: auto; border-top: 0; border-left: 2px dashed var(--line); }
+}
+
+/* ladder */
+.ladder { display: grid; gap: 10px; }
+.rung { display: grid; grid-template-columns: 120px minmax(0, 1fr); align-items: center; gap: 16px; }
+.bar { height: 46px; border-radius: 8px; background: var(--prof-soft); display: flex; align-items: center; padding-left: 14px; font: 800 1.1rem/1 var(--font-display); color: var(--prof); }
+.rung:nth-child(1) .bar { width: 40%; } .rung:nth-child(2) .bar { width: 60%; } .rung:nth-child(3) .bar { width: 80%; }
+.rung:nth-child(4) .bar { width: 100%; background: var(--prof); color: var(--surface); }
+.rung p { font-size: 0.97rem; }
+.rung p b { display: block; }
+.rung p span { color: var(--muted); font-size: 0.92rem; }
+@media (max-width: 520px) { .rung { grid-template-columns: 72px minmax(0, 1fr); } }
+
+/* talk */
+.talk { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.bubble { background: var(--surface); border: 1px solid var(--line); border-radius: 14px 14px 14px 4px; padding: 16px 18px; display: grid; gap: 8px; }
+.bubble .to { font: 500 0.78rem/1 var(--font-mono); }
+.bubble q { font-size: 1rem; quotes: "“" "”"; }
+@media (max-width: 720px) { .talk { grid-template-columns: minmax(0, 1fr); } }
+
+.keys { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; color: var(--muted); }
+kbd { font: 500 0.9rem/1 var(--font-mono); color: var(--ink); background: var(--surface); border: 1px solid var(--line); border-bottom-width: 3px; border-radius: 6px; padding: 7px 10px; }
+
+.rule { display: grid; gap: 10px; padding: 26px; border-radius: 12px; background: var(--tu-soft); }
+.rule h2 { color: var(--tu); }
+footer { color: var(--muted); font-size: 0.9rem; border-top: 1px solid var(--line); padding-top: 18px; }
+@media (prefers-reduced-motion: no-preference) {
+  .pulse { animation: pulse 2.4s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <span class="label">Introducción · Luka · robots OnStage</span>
+  <h1>Tú escribes los robots.<br>Tu equipo te ayuda.</h1>
+  <p class="lead">En opencode tienes dos ayudantes de IA. Ninguno programa los robots por ti: uno te enseña y el otro se encarga de las herramientas.</p>
+
+  <div class="stage" role="img" aria-label="Esquema: el profesor te enseña, tú escribes el código, el técnico lo prueba y lo sube a los 3 robots">
+    <svg viewBox="0 0 840 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="flecha" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0 0 L10 5 L0 10 z" fill="var(--muted)"/>
+        </marker>
+      </defs>
+      <!-- Profesor -->
+      <circle cx="110" cy="150" r="62" fill="var(--prof-soft)"/>
+      <g stroke="var(--prof)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M86 140 L110 128 L134 140 L110 152 Z"/><path d="M96 146 v12 c8 6 20 6 28 0 v-12"/>
+      </g>
+      <text x="110" y="240" text-anchor="middle" font-weight="600" font-size="17" fill="var(--prof)">Profesor</text>
+      <text x="110" y="262" text-anchor="middle" font-size="13" fill="var(--muted)">te explica</text>
+
+      <path d="M178 150 H 330" stroke="var(--muted)" stroke-width="2" stroke-dasharray="6 6" fill="none" marker-end="url(#flecha)"/>
+      <text x="254" y="138" text-anchor="middle" font-size="13" fill="var(--muted)">pistas y dibujos</text>
+
+      <!-- Tú -->
+      <circle cx="410" cy="150" r="74" fill="var(--tu-soft)"/>
+      <circle cx="410" cy="150" r="74" fill="none" stroke="var(--tu)" stroke-width="2" class="pulse"/>
+      <g stroke="var(--tu)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="410" cy="132" r="14"/><path d="M384 176 c4 -18 48 -18 52 0"/>
+      </g>
+      <text x="410" y="252" text-anchor="middle" font-weight="800" font-size="19" fill="var(--tu)">Tú</text>
+      <text x="410" y="274" text-anchor="middle" font-size="13" fill="var(--muted)">escribes el código</text>
+
+      <path d="M490 150 H 600" stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#flecha)"/>
+      <text x="545" y="138" text-anchor="middle" font-size="13" fill="var(--muted)">tu código</text>
+
+      <!-- Técnico -->
+      <circle cx="660" cy="150" r="52" fill="var(--tec-soft)"/>
+      <g stroke="var(--tec)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M648 166 L670 144"/><path d="M666 130 a12 12 0 1 0 16 16 l-8 -2 l-6 -6 z"/>
+      </g>
+      <text x="660" y="230" text-anchor="middle" font-weight="600" font-size="17" fill="var(--tec)">Técnico</text>
+      <text x="660" y="252" text-anchor="middle" font-size="13" fill="var(--muted)">prueba y sube</text>
+
+      <!-- 3 robots -->
+      <path d="M712 150 C 740 150, 740 70, 772 70" stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#flecha)"/>
+      <path d="M712 150 H 772" stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#flecha)"/>
+      <path d="M712 150 C 740 150, 740 230, 772 230" stroke="var(--muted)" stroke-width="2" fill="none" marker-end="url(#flecha)"/>
+      <g fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5">
+        <rect x="778" y="52" width="42" height="34" rx="7"/><rect x="778" y="133" width="42" height="34" rx="7"/><rect x="778" y="213" width="42" height="34" rx="7"/>
+      </g>
+      <g fill="var(--ink)">
+        <circle cx="791" cy="67" r="3"/><circle cx="807" cy="67" r="3"/>
+        <circle cx="791" cy="148" r="3"/><circle cx="807" cy="148" r="3"/>
+        <circle cx="791" cy="228" r="3"/><circle cx="807" cy="228" r="3"/>
+      </g>
+      <text x="799" y="285" text-anchor="middle" font-size="13" fill="var(--muted)">3 robots</text>
+    </svg>
+  </div>
+</header>
+
+<section>
+  <span class="label">Quién hace qué</span>
+  <h2>Tres papeles, y el principal es el tuyo</h2>
+  <div class="roles">
+    <div class="role r-tu">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-5 15-5 16 0"/></svg></div>
+        <h3 class="tu">Tú</h3>
+      </div>
+      <ul>
+        <li>Escribes el código de los robots</li>
+        <li>Lo pruebas y lo guardas</li>
+        <li>Puedes explicarlo a los jueces</li>
+      </ul>
+    </div>
+    <div class="role r-prof">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 3 9 3 12 0v-5"/></svg></div>
+        <h3 class="prof">Profesor</h3>
+      </div>
+      <ul>
+        <li>Te explica con ejemplos</li>
+        <li>Te da pistas si te atascas</li>
+        <li>Revisa tu código</li>
+        <li>Dibuja diagramas</li>
+        <li class="no">No te escribe la solución</li>
+      </ul>
+    </div>
+    <div class="role r-tec">
+      <div class="head">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L12 19a2.1 2.1 0 0 1-3-3z"/><path d="M14.7 6.3L17 4l3 3-2.3 2.3"/></svg></div>
+        <h3 class="tec">Técnico</h3>
+      </div>
+      <ul>
+        <li>Instala las herramientas</li>
+        <li>Prepara las placas</li>
+        <li>Prueba y sube tu código</li>
+        <li class="no">No toca la lógica de tus robots</li>
+      </ul>
+    </div>
+  </div>
+  <div class="dirnote">
+    <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V10l8-6 8 6v10"/><path d="M9 20v-6h6v6"/></svg></div>
+    <p><b class="dir">¿No sabes a quién pedirle algo?</b> Pregúntale al agente normal de opencode. Hace de director: entiende lo que necesitas y se lo pasa al profesor o al técnico.</p>
+  </div>
+</section>
+
+<section>
+  <span class="label">Cómo se trabaja</span>
+  <h2>Un día normal</h2>
+  <div class="loop">
+    <div class="step s1">
+      <div class="dot">1</div>
+      <span class="who tu">Tú</span>
+      <h3>Escribes</h3>
+      <p>Un ejercicio o una parte del robot.</p>
+    </div>
+    <div class="step s2">
+      <div class="dot">2</div>
+      <span class="who tec">Técnico</span>
+      <h3>Verificas</h3>
+      <p>Un comando revisa todo en tu PC.</p>
+    </div>
+    <div class="step s3">
+      <div class="dot">3</div>
+      <span class="who tu">Tú</span>
+      <h3>Pruebas en la placa</h3>
+      <p>Lo ves funcionar en el robot de verdad.</p>
+    </div>
+    <div class="step s4">
+      <div class="dot">4</div>
+      <span class="who tu">Tú</span>
+      <h3>Guardas</h3>
+      <p>Un commit cuando algo funciona.</p>
+    </div>
+  </div>
+  <div class="back">
+    <div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 9a3 3 0 1 1 4 2.8c-.6.3-1 .9-1 1.6V14"/><circle cx="12" cy="18" r="0.6" fill="currentColor"/></svg></div>
+    <p><b class="prof">¿Te atascaste en cualquier paso?</b> Pídele una pista al profesor y sigue.</p>
+  </div>
+</section>
+
+<section>
+  <span class="label">Cuando te atascas</span>
+  <h2>El profesor te da pistas de a poco</h2>
+  <p>Empieza por la pista más pequeña. Solo da la siguiente si sigues atascado.</p>
+  <div class="ladder">
+    <div class="rung"><div class="bar">1</div><p><b>Una pregunta</b><span>“¿Qué valor lee el pin cuando el botón está suelto?”</span></p></div>
+    <div class="rung"><div class="bar">2</div><p><b>La idea que te falta</b><span>“Mira <code>Pin.PULL_UP</code>.”</span></p></div>
+    <div class="rung"><div class="bar">3</div><p><b>Un pedacito de código</b><span>Una a tres líneas, nunca el archivo entero.</span></p></div>
+    <div class="rung"><div class="bar">4</div><p><b>La solución</b><span>Solo si escribes “muéstrame la solución”. Te la explica línea por línea.</span></p></div>
+  </div>
+</section>
+
+<section>
+  <span class="label">Cómo hablarles</span>
+  <h2>Cambia de ayudante en un segundo</h2>
+  <div class="keys"><kbd>Tab</kbd> cambia de agente · o escribe <kbd>@profesor</kbd> <kbd>@entorno</kbd> en tu mensaje</div>
+  <div class="talk">
+    <div class="bubble"><span class="to prof">@profesor</span><q>No entiendo por qué mi robot se congela cuando espera el sensor.</q></div>
+    <div class="bubble"><span class="to prof">@profesor</span><q>Dibújame cómo se sincronizan los 3 robots.</q></div>
+    <div class="bubble"><span class="to tec">@entorno</span><q>Conecté una placa nueva, prepárala.</q></div>
+    <div class="bubble"><span class="to tec">@entorno</span><q>Sube el robot 2 y dime si las pruebas pasan.</q></div>
+  </div>
+</section>
+
+<section class="rule">
+  <span class="label">La regla de oro</span>
+  <h2>Si no lo puedes explicar, no lo subas al robot</h2>
+  <p>En la competencia te pueden preguntar por cualquier línea. La IA te ayuda a aprender más rápido, pero el código y lo que sabes sobre él tienen que ser tuyos.</p>
+</section>
+
+<footer>Preparado por Sergio Castro para Luka. Repositorio: Cassers/Mi-agente, rama micropython-onstage.</footer>
+</div>
