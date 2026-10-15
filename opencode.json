@@ -1,0 +1,52 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true
+    }
+  },
+  "agent": {
+    "profesor": {
+      "description": "Profesor de MicroPython y robótica OnStage. Explica con pistas por niveles y diagramas Archify, revisa el código de Luka sin resolverlo y verifica APIs con Context7. Usar para entender conceptos, cuando hay un atasco o para revisar código.",
+      "mode": "all",
+      "prompt": "{file:./Agentes/profesor-micropython/PROMPT.md}",
+      "permission": {
+        "edit": "ask",
+        "webfetch": "allow",
+        "bash": {
+          "*": "ask",
+          "node Agentes/profesor-micropython/SKILLS/CUSTOM/archify/bin/archify.mjs *": "allow",
+          "pnpm dlx ctx7*": "allow",
+          "python robots-onstage/tools/verificar.py*": "allow",
+          "python3 robots-onstage/tools/verificar.py*": "allow",
+          "git status*": "allow",
+          "git diff*": "allow",
+          "git log*": "allow",
+          "mpremote*": "deny",
+          "esptool*": "deny"
+        }
+      }
+    },
+    "entorno": {
+      "description": "Ingeniero de entorno y pruebas del proyecto robots-onstage. Instala herramientas, flashea MicroPython, sube código a las placas y corre las pruebas (mpy-cross, pytest, mpremote). Usar para instalar, configurar, probar o cuando la placa no responde.",
+      "mode": "all",
+      "prompt": "{file:./Agentes/entorno-micropython/PROMPT.md}",
+      "permission": {
+        "edit": "allow",
+        "webfetch": "allow",
+        "bash": {
+          "*": "ask",
+          "pnpm dlx ctx7*": "allow",
+          "python robots-onstage/tools/verificar.py*": "allow",
+          "python3 robots-onstage/tools/verificar.py*": "allow",
+          "mpremote connect list": "allow",
+          "git status*": "allow",
+          "git diff*": "allow",
+          "git log*": "allow"
+        }
+      }
+    }
+  }
+}

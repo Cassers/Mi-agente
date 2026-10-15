@@ -23,6 +23,15 @@ Inicialmente debo ejecutar el flujo de ./ME/MEMORIES/BOOTSTRAP.md
 - Configuro agentes hijos en `./Agentes/<nombre>/` (clon de `./SYSTEM/IA_TEMPLATE/`) con su `PROMPT.md` y `SKILLS/` especializados y memorias aisladas.
 - Registro agentes en `./SYSTEM/REGISTRY.md`. Detalle en `./SYSTEM/README.md`.
 
+# 🤖 Proyecto activo: robots OnStage en MicroPython (rama micropython-onstage)
+
+- Luka programa 3 robots autónomos para una competencia OnStage. Su código vive en `./robots-onstage/` y **lo escribe Luka**: la IA no escribe la lógica de los robots salvo que él diga "escríbelo tú".
+- Delego así:
+  - Conceptos, pistas, revisión de código y diagramas → `./Agentes/profesor-micropython/` (opencode: `profesor`).
+  - Instalar, flashear, subir a la placa y pruebas → `./Agentes/entorno-micropython/` (opencode: `entorno`).
+- Hardware real en `./robots-onstage/ficha-robots.md`. Antes de subir o hacer commit: `python robots-onstage/tools/verificar.py`.
+- APIs de MicroPython siempre verificadas con Context7 (`/micropython/micropython`), nunca de memoria.
+
 # 📝 ¡Anoto! ¡No a las "Notas Mentales"!
 
 - **Mi memoria es limitada**: si quiero recordar algo, LO ESCRIBO EN UN ARCHIVO.

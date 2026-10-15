@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Arranque sincronizado de los 3 robots con ESP-NOW",
+    "output": "robots-onstage/diagramas/sequence-arranque-sincronizado-20261015-1540/arranque-sincronizado.html",
+    "locale": "es",
+    "quality_profile": "showcase"
+  },
+  "participants": [
+    { "id": "luka", "type": "external", "label": "Luka", "sublabel": "en el escenario", "icon": "person" },
+    { "id": "r1", "type": "backend", "label": "Robot 1", "sublabel": "líder · ESP32" },
+    { "id": "aire", "type": "messagebus", "label": "ESP-NOW", "sublabel": "broadcast ff:ff:…" },
+    { "id": "r2", "type": "backend", "label": "Robot 2", "sublabel": "seguidor · ESP32" },
+    { "id": "r3", "type": "backend", "label": "Robot 3", "sublabel": "seguidor · ESP32" },
+    { "id": "publico", "type": "external", "label": "Público", "sublabel": "y jueces", "icon": "person" }
+  ],
+  "segments": [
+    { "from": 150, "to": 250, "label": "Señal de arranque" },
+    { "from": 260, "to": 380, "label": "Todos guardan t0" },
+    { "from": 390, "to": 560, "label": "La obra con el mismo reloj" }
+  ],
+  "messages": [
+    { "id": "boton", "from": "luka", "to": "r1", "y": 165, "label": "presiona el botón", "variant": "emphasis", "note": "main.py esperaba el botón antes de moverse" },
+    { "id": "go-envio", "from": "r1", "to": "aire", "y": 220, "label": "send GO ×5", "variant": "emphasis", "note": "t0 = ticks_ms() en el líder" },
+    { "id": "go-r2", "from": "aire", "to": "r2", "y": 280, "label": "recv → GO", "variant": "default", "note": "t0 = ticks_ms(); ignora los GO repetidos" },
+    { "id": "go-r3", "from": "aire", "to": "r3", "y": 340, "label": "recv → GO", "variant": "default", "note": "mismo t0, desfase de pocos ms" },
+    { "id": "cue0-r1", "from": "r1", "to": "publico", "y": 410, "label": "cue 0 ms: entra", "variant": "default" },
+    { "id": "cue0-r2", "from": "r2", "to": "publico", "y": 440, "label": "cue 0 ms: entra", "variant": "default" },
+    { "id": "cue0-r3", "from": "r3", "to": "publico", "y": 470, "label": "cue 0 ms: entra", "variant": "default" },
+    { "id": "cue2000", "from": "r2", "to": "publico", "y": 510, "label": "cue 2000 ms: gira", "variant": "dashed", "note": "cada robot recorre su propia lista de cues" }
+  ],
+  "activations": [
+    { "participant": "r1", "from": 165, "to": 545 },
+    { "participant": "r2", "from": 280, "to": 545 },
+    { "participant": "r3", "from": 340, "to": 545 }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "La idea",
+      "items": [
+        "Un solo robot recibe la señal humana: el líder",
+        "El líder avisa a los otros dos por ESP-NOW, sin router ni WiFi",
+        "Desde ese instante los tres miden el tiempo desde su propio t0"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Por qué repetir el GO",
+      "items": [
+        "Un mensaje inalámbrico se puede perder",
+        "El líder lo envía 5 veces con 2 ms de pausa",
+        "El seguidor arranca con el primero y deja de escuchar"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "Pregunta de comprobación",
+      "items": [
+        "Si el Robot 3 usa sleep_ms(500) dentro de su bucle de cues, ¿qué ve el público?"
+      ]
+    }
+  ]
+}

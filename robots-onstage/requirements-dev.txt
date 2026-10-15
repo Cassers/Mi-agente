@@ -1,0 +1,5 @@
+# Herramientas del PC para el proyecto (no se suben a la placa).
+mpremote      # copiar, correr y abrir el REPL de la placa
+esptool       # flashear MicroPython en ESP32
+mpy-cross     # compilador de MicroPython: verifica sintaxis
+pytest        # pruebas de lógica en el PC

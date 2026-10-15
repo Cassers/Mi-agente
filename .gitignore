@@ -1,0 +1,15 @@
+# Python
+.venv/
+__pycache__/
+.pytest_cache/
+*.mpy
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Recibos de verificación de Archify (se regeneran con finalize)
+*.finalize.json
+*.finalize-summary.json
+*.browser-check.json
+*.delivery.json
