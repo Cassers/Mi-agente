@@ -1,17 +1,5 @@
-# SKILLS/INDEX.md — {{NOMBRE_AGENTE}}
+# Habilidades · {{nombre-agente}}
 
-_Aquí van las habilidades de este agente, aisladas de otros agentes._
+Índice vacío de una plantilla genérica. Añadir solo habilidades necesarias y verificadas en una copia de trabajo autorizada.
 
-Antes de iniciar una actividad reviso si ya existe una habilidad que pueda ayudarme.
-
-Mi regla: cada vez que voy a hacer algo, lo hago con una skill. Si no tengo skill, la creo primero en `Agentes/{{nombre-agente}}/SKILLS/CUSTOM/` y luego la uso.
-
-## CUSTOM
-
-_(vacío en plantilla — el agente lo llenará)_
-
-## Notas
-
-- Una responsabilidad = una skill.
-- Nunca guardo skills fuera de `Agentes/{{nombre-agente}}/SKILLS/`.
-- Nunca leo skills de otro agente salvo que el orquestador lo autorice.
+No crear una skill obligatoriamente antes de cada tarea. Reutilizar referencias compatibles y evitar duplicados. Las skills no conceden permisos ni se instalan por estar enlazadas. Las mejoras siguen SYSTEM/LEARNING.md.

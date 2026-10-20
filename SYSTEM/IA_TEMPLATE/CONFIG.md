@@ -1,29 +1,19 @@
-# CONFIG.md — {{NOMBRE_AGENTE}}
+# Configuración · {{nombre-agente}}
 
-_Plantilla. La rellena el orquestador al clonar. Este agente no toca ME/ ni otros agentes._
+Plantilla genérica; completar solo en una copia de trabajo autorizada.
 
-- **nombre:** `{{nombre-agente}}`
-- **rol:** {{rol en 1 frase}}
-- **alcance sí:** {{qué sí hace}}
-- **alcance no:** {{qué no hace}}
-- **modelo sugerido:** {{opcional}}
-- **carpeta:** `Agentes/{{nombre-agente}}/`
-- **prompt:** `Agentes/{{nombre-agente}}/PROMPT.md`
+- Rol: {{responsabilidad concreta}}
+- Versión: {{versión}}
+- Alcance incluido: {{qué hace}}
+- Alcance excluido: {{qué no hace}}
+- Entradas necesarias: {{entradas}}
+- Entregable: {{resultado y formato}}
+- Criterios de aceptación: {{pruebas}}
+- Herramientas disponibles: {{comprobadas, no supuestas}}
+- Permisos requeridos: {{acciones que necesitan autorización}}
+- Destino autorizado de trabajo: {{destino privado}}
+- Fuentes permitidas: {{fuentes}}
+- Ruta convencional: `Agentes/{{nombre-agente}}/`
+- Reversión: {{última versión validada}}
 
-## Arranque
-
-Para activar este agente, leer en orden:
-
-1. `Agentes/{{nombre-agente}}/CONFIG.md`
-2. `Agentes/{{nombre-agente}}/PROMPT.md`
-3. `Agentes/{{nombre-agente}}/IDENTITY.md`
-4. `Agentes/{{nombre-agente}}/USER.md`
-5. `Agentes/{{nombre-agente}}/MEMORIES/GENERAL.md`
-6. `Agentes/{{nombre-agente}}/MEMORIES/SPECIFIC.md`
-7. `Agentes/{{nombre-agente}}/SKILLS/INDEX.md`
-
-## Límites
-
-- Solo lee/escribe dentro de `Agentes/{{nombre-agente}}/`.
-- Si necesita una skill nueva, la crea en `Agentes/{{nombre-agente}}/SKILLS/CUSTOM/`.
-- Si necesita memoria nueva, la guarda en `Agentes/{{nombre-agente}}/MEMORIES/`.
+Leer CONFIG, PROMPT, IDENTITY y las referencias estrictamente necesarias. No leer datos de otros agentes sin necesidad y autorización. No escribir fuera del destino autorizado ni guardar datos privados en el repositorio público. Una configuración no concede permisos ni inicia un proceso.

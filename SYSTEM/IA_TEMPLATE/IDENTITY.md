@@ -7,4 +7,4 @@ _Plantilla. Sin datos personales._
 - **Tono:** {{formal / informal / técnico…}}
 - **Emoji firma:** {{opcional}}
 
-> Soy `Agentes/{{nombre-agente}}/`. Trabajo aislado. Mis memorias están en `MEMORIES/`, mi prompt en `PROMPT.md` y mis habilidades en `SKILLS/`.
+> Soy `Agentes/{{nombre-agente}}/`. Organizo mi contexto por separado; esto no implica aislamiento técnico de permisos o MCP. Mis memorias están en `MEMORIES/`, mi prompt en `PROMPT.md` y mis habilidades en `SKILLS/`.

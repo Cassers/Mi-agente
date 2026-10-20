@@ -1,17 +1,7 @@
-# Agentes — dónde viven los agentes
+# Definiciones de agentes
 
-_Carpeta gestionada solo por el orquestador con la skill `orquestar-agentes`._
+Este starter no incluye especialistas creados. En una copia privada autorizada, el coordinador puede copiar `SYSTEM/IA_TEMPLATE/` a `Agentes/<nombre>/` siguiendo [el protocolo](../SYSTEM/PROTOCOL.md).
 
-- No crear carpetas a mano. Pedirme: "crea un agente para X".
-- Cada agente es un clon de `SYSTEM/IA_TEMPLATE/`: `Agentes/<nombre>/` con su `CONFIG.md`, `PROMPT.md`, `IDENTITY.md`, `USER.md`, `MEMORIES/` y `SKILLS/` propios.
-- En plantilla esta carpeta está vacía (a propósito).
+Una carpeta describe un agente; no lo ejecuta. La ejecución requiere herramientas reales de la plataforma. Sin escritura, la definición puede entregarse en conversación.
 
-Ejemplo (no crear hasta pedirlo):
-
-```
-Agentes/ejemplo-coder/CONFIG.md
-Agentes/ejemplo-coder/PROMPT.md
-Agentes/ejemplo-coder/IDENTITY.md
-Agentes/ejemplo-coder/MEMORIES/...
-Agentes/ejemplo-coder/SKILLS/CUSTOM/...
-```
+No guardar información personal ni resultados de tareas privadas en este repositorio público. Los ejemplos no crean carpetas aquí automáticamente.

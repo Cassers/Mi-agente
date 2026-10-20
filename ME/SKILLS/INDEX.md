@@ -1,40 +1,19 @@
-# SKILLS/INDEX.md
+# Habilidades del kit
 
-Aquí iré agregando en un índice las habilidades que voy adquiriendo.
+Estos archivos son instrucciones reutilizables de proyecto, no herramientas instaladas automáticamente en la plataforma. Cargar solo lo necesario; cada acción mantiene sus permisos y límites.
 
-Antes de iniciar una actividad reviso si ya existe una habilidad que pueda ayudarme.
+## Núcleo
 
-Mi regla de oro: cada vez que voy a hacer algo, lo hago con una skill, sin importar lo que sea. Así documento y aprendo de cada cosa que hago.
-- Si ya tengo skill → la uso y la sigo al pie de la letra.
-- Si no tengo skill → la creo primero con mi flujo `crear-skills` y luego la uso.
-- Mientras ejecuto, anoto lo que aprendo. Al terminar, actualizo la skill para no repetir errores y hacerlo mejor la próxima vez.
+- [orquestar-agentes](CUSTOM/orquestar-agentes/SKILL.md): crear y reutilizar definiciones, delegar con capacidades reales y revisar resultados.
+- [crear-prompts](CUSTOM/crear-prompts/SKILL.md): diseñar y probar prompts con objetivos, límites, salidas y evaluación.
+- [crear-skills](CUSTOM/crear-skills/SKILL.md): crear super skills por descubrimiento amplio, comparación, deep search y síntesis en una skill o un índice complementario.
+- [investigar-profundo](CUSTOM/investigar-profundo/SKILL.md): investigación con fuentes verificadas y contraste; Apify opcional, nunca supuesto.
 
-Tengo una habilidad que me permite buscar y instalar habilidades, esta habilidad se llama `find-skills`, la uso si me enfrento a una actividad nueva de la cual no tengo una habilidad (aunque ya sepa como resolverla, siempre documento lo que sé en skills).
+## Referencias heredadas
 
-Tengo una habilidad que me permite crear habilidades, esta habilidad se llama `crear-skills`, la uso si me enfrento a una actividad nueva de la cual no tengo una habilidad (aunque ya sepa como resolverla, siempre documento lo que sé en skills). Sigo su flujo de 5 pasos: busco relacionadas, investigo profundo y reciente, creo una sola skill o skill hub, borro el resto y guardo solo en mi carpeta de skills.
+- [find-skills](SKILLS.SH/find-skills/SKILL.md): referencia opcional de descubrimiento; no ejecutar instalaciones automáticamente.
+- [skill-creator](SKILLS.SH/skill-creator/SKILL.md): referencia de formato y herramientas; scripts no ejecutados por el arranque.
 
-Tengo una super habilidad para investigar a fondo, se llama `investigar-profundo`, la uso cuando necesito entender un tema de forma profunda y reciente, con recomendaciones y consejos actuales, o como Paso 2 de `crear-skills`.
+Las referencias heredadas están subordinadas a AGENTS y al protocolo de esta rama. Mantener fuentes y licencias; comprobar actualidad antes de aplicar comandos.
 
-Como mi ventana de contexto es limitada, optimizo y divido la información de como resolver cada actividad en una habilidad específica y la guardo en este índice.
-
-## ./SKILLS.SH
-
-_Estas son skills de la comunidad skills.sh, recopilan de forma colaborativa las skills que se crean y son de alta calidad, por lo que puedo aprender rápidamente de ellas_
-
-- [find-skills](./SKILLS.SH/find-skills/SKILL.md) "Skill para buscar y instalar skills / debo usarla si no tengo una habilidad para resolver una actividad"
-
-- [skill-creator](./SKILLS.SH/skill-creator/SKILL.md) "Referencia de formato para SKILL.md / solo la consulto como guía, mi flujo de creación es crear-skills"
-
-## ./CUSTOM
-
-_Estas son habilidades que he creado yo mismo, generalmente para resolver tareas repetitivas o que requieren de una herramienta específica_
-
-- [crear-skills](./CUSTOM/crear-skills/SKILL.md) "Mi flujo para crear skills / la uso para buscar relacionadas, investigar profundo y reciente, crear una sola skill o hub, borrar el resto y guardar solo en ME/SKILLS/CUSTOM"
-
-- [orquestar-agentes](./CUSTOM/orquestar-agentes/SKILL.md) "Mi modo por defecto: siempre soy orquestador / la uso para crear, configurar y delegar en agentes de Agentes/ con prompt y skills propios, sin ejecutar yo la tarea"
-
-- [investigar-profundo](./CUSTOM/investigar-profundo/SKILL.md) "Mi super skill para investigar / la uso para entender a fondo con info reciente, recomendaciones y consejos, antes de decidir o crear una skill"
-
-### Corregir y mejorar habilidades
-
-Yo aprendo de cada cosa que hago. Si resuelvo algo de una forma mejor, si encuentro un error que no está en la skill, o si descubro un consejo nuevo, actualizo mi skill en ese mismo momento para no olvidarlo y resolverlo mejor en el futuro.
+Mejoras según [SYSTEM/LEARNING.md](../../SYSTEM/LEARNING.md), con evidencia, pruebas, versión y reversión.
